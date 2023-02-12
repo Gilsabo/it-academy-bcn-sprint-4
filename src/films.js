@@ -1,7 +1,7 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  
-  const resultDirectors = array.map(array=>array.director)
+
+  const resultDirectors = array.map(array => array.director)
 
   console.log("EXERCICE 1 ->", resultDirectors);
   return resultDirectors;
@@ -10,31 +10,35 @@ function getAllDirectors(array) {
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
 
-const resultMoviesFromDirector = array.filter(object=> {
-  if (object.director === director) {
-    return object.title;
-  }
+  const resultMoviesFromDirector = array.filter(object => {
+    if (object.director === director) {
+      return object.title;
+    }
 
-})
+  })
 
-console.log("EXERCICE 2 ->", resultMoviesFromDirector);
-return resultMoviesFromDirector;
- 
+  console.log("EXERCICE 2 ->", resultMoviesFromDirector);
+  return resultMoviesFromDirector;
+
 }
 
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
-
-const resultMoviesAverageOfDirector = 
-  console.log("EXERCICE 3 ->", resultMoviesAverageOfDirector);
-return resultMoviesAverageOfDirector;
+  const resultMoviesFromDirector = array.filter(object => {
+    if (object.director === director) {
+      return object.title;
+    }
+  })
   
+  const resultMoviesAverageOfDirector = resultMoviesFromDirector.reduce((average, movieRate) => average.score + movieRate.score)
+  return resultMoviesAverageOfDirector/resultMoviesFromDirector.length;
 }
+
 
 // Exercise 4:  Alphabetic order by title 
 function orderAlphabetically(array) {
-  
+
 }
 
 // Exercise 5: Order by year, ascending
@@ -54,7 +58,7 @@ function hoursToMinutes() {
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
-  
+
 }
 
 
