@@ -49,22 +49,21 @@ function orderByYear(array) {
       } else if (a.title < b.title) {
         return -1;
       }
-
-
   })
 
   return cloneArray;
-
-  console.log(cloneArray)
-  console.log(array)
-  
-
-
 }
 
-// Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
 
+// Exercise 6: Calculate the average of the movies in a category
+function moviesAverageByCategory(array, genre) {
+  const resultMoviesFromGenre = array.filter(object => object.genre.includes(genre) && typeof(object.score) === "number")
+
+  const resultMoviesAverageOfGenre =resultMoviesFromGenre.reduce((average, movieRate) => average + movieRate.score, 0)
+    
+  console.log(resultMoviesAverageOfGenre)
+
+  return Number((resultMoviesAverageOfGenre / resultMoviesFromGenre.length).toFixed(2))
 
 
 }
