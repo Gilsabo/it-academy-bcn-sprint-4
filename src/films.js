@@ -31,9 +31,8 @@ function orderAlphabetically(array) {
     return array.map(movie => movie.title).sort()
   }
   return array.map(movie => movie.title).sort().splice(0, 20);
-
-
 }
+
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
   const cloneArray = [...array].sort((a, b) => {
@@ -57,10 +56,10 @@ function orderByYear(array) {
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, genre) {
-  const resultMoviesFromGenre = array.filter(object => object.genre.includes(genre) && typeof(object.score) === "number")
+  const resultMoviesFromGenre = array.filter(object => object.genre.includes(genre) && typeof (object.score) === "number")
 
-  const resultMoviesAverageOfGenre =resultMoviesFromGenre.reduce((average, movieRate) => average + movieRate.score, 0)
-    
+  const resultMoviesAverageOfGenre = resultMoviesFromGenre.reduce((average, movieRate) => average + movieRate.score, 0)
+
   console.log(resultMoviesAverageOfGenre)
 
   return Number((resultMoviesAverageOfGenre / resultMoviesFromGenre.length).toFixed(2))
@@ -69,12 +68,22 @@ function moviesAverageByCategory(array, genre) {
 }
 
 // Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
+function hoursToMinutes(array) {
+  const newArray = JSON.parse(JSON.stringify(array))
+  Object.keys(newArray).forEach((object) => {
+    let indexHour;
+    if (newArray[object].duration.includes('h'))
+      indexHour = newArray[object].duration
+    newArray[object].duration = indexHour.replace(indexHour.charAt(0), indexHour.charAt(0) * 60).replace('min', '').replace('h ', '+').split('+').reduce((sum, current) => sum + parseInt(current, 10), 0)
 
+  })
+  console.log(array)
+  return newArray;
+  
 }
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
+function bestFilmOfYear(year) {
 
 }
 
