@@ -8,7 +8,7 @@ This project involved manipulating movie data using ES6 features like map(), sor
 - Sorting of movie data based on user-selected criteria or predefined criteria
 - Passing of tests to validate functionality
 ## Technologies Used
-- ES6 JavaScript
+- ES6 Javascript
 - HTML
 - Jest (for testing)
 
